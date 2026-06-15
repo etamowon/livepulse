@@ -46,8 +46,8 @@ const makeIcon = (color, label) =>
 function StatCard({ label, value, sub, accent }) {
   return (
     <div style={{
-      background: C.card, border: `1px solid ${C.border}`,
-      borderRadius: 12, padding: "16px 20px", flex: 1,
+    background: C.card, border: `1px solid ${C.border}`,
+    borderRadius: 12, padding: "16px 20px", flex: 1, minWidth: 0,
     }}>
       <div style={{ fontSize: 28, fontWeight: 800, color: accent, lineHeight: 1 }}>{value}</div>
       <div style={{ fontSize: 13, color: C.text, marginTop: 4, fontWeight: 600 }}>{label}</div>
@@ -225,7 +225,7 @@ export default function App() {
       </div>
 
       {/* Stat cards */}
-      <div style={{ padding: "16px 24px 0", display: "flex", gap: 12, flexShrink: 0 }}>
+      <div style={{ padding: "16px 24px 0", display: "flex", gap: 12, flexShrink: 0, minWidth: 0 }}>
         <StatCard label="Total Vehicles" value={vehicleList.length} sub="All tracked"  accent={C.accent} />
         <StatCard label="Moving"         value={activeCount}        sub={vehicleList.length ? `${Math.round(activeCount / vehicleList.length * 100)}% of fleet` : "—"} accent={C.green} />
         <StatCard label="Delayed"        value={delayedCount}       sub={vehicleList.length ? `${Math.round(delayedCount / vehicleList.length * 100)}% of fleet` : "—"} accent={C.orange} />
